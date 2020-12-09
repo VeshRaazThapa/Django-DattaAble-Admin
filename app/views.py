@@ -9,6 +9,8 @@ from django.template import loader
 from django.http import HttpResponse
 from django import template
 from app import models
+from app.forms import UserInfoForm,MemberInfoForm
+from django.http import HttpResponseRedirect
 
 @login_required(login_url="/login/")
 def index(request):
@@ -21,35 +23,49 @@ def index(request):
 
 @login_required(login_url="/login/")
 def pages(request):
-    context = {}
+        context = {}
     # All resource paths end in .html.
     # Pick out the html file name from the url. And load that template.
-    try:
+    # try:
         
         load_template = request.path.split('/')[-1]
-        context['segment'] = load_template
+        # context['segment'] = load_template
 
         if 'member_table' in load_template:
             context['membersinfo'] = models.MemberInfo.objects.all()
+            load_template = 'ui-tables.html'
+            print(load_template)
+            print(context)
 
-            # print(context['membersinfo'])
-            html_template = loader.get_template('ui-tables.html')
-            return HttpResponse(html_template.render(context, request))
+        if 'add_members' in load_template:
+            load_template = 'ui-forms.html'
+            # from usermodel
+            context['user_forms'] = UserInfoForm
+            #custom membermodel
+            context['member_forms'] = MemberInfoForm
+            if request.method == 'POST':
+                userform = UserInfoForm(request.POST)
+                memberform = MemberInfoForm(request.POST)
+                if userform.is_valid() :
+                    userform.save()
+                    # memberform.save()
+                    return HttpResponseRedirect('ui-tables.html')
+            else:
+                userform = UserInfoForm()
+                memberform = MemberInfoForm()
 
-        # return HttpResponse(html_template.render(context, request))
-        # return render(request,'core/templates/ui-tables.html')
-
-
+        html_template = loader.get_template(load_template)
+        return HttpResponse(html_template.render(context, request))
         
-    except template.TemplateDoesNotExist:
+    # except template.TemplateDoesNotExist:
+    #
+    #     html_template = loader.get_template( 'page-404.html' )
+    #     return HttpResponse(html_template.render(context, request))
 
-        html_template = loader.get_template( 'page-404.html' )
-        return HttpResponse(html_template.render(context, request))
-
-    except:
-    
-        html_template = loader.get_template( 'page-500.html' )
-        return HttpResponse(html_template.render(context, request))
+    # except :
+    #
+    #     html_template = loader.get_template( 'page-500.html' )
+    #     return HttpResponse(html_template.render(context, request))
 
 # def member_table (request):
 #     context = {}

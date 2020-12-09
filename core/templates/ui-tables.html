@@ -40,13 +40,18 @@
                             </div>
                             <div class="card-block table-border-style">
                                 <div class="table-responsive">
+                                    <a class="btn btn-primary" href="{% url 'add_members' %}" role="button">Add Members</a>
                                     <table class="table">
                                         <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>Second Name</th>
+
                                                 <th>First Name</th>
+                                                <th>Middle Name</th>
                                                 <th>Last Name</th>
+                                                <th>username</th>
+                                                <th>Email Address</th>
+                                                <th>Designation</th>
 
                                             </tr>
                                         </thead>
@@ -54,10 +59,13 @@
 
                                         {% for member in membersinfo %}
                                             <tr>
-                                                <th scope="row">1</th>
+                                                <th scope="row">{{member.member.id}}</th>
+                                                    <td>{{member.member.first_name}}</td>
+                                                    <td>{{member.middle_name}}</td>
+                                                    <td>{{member.member.last_name}}</td>
                                                     <td>{{member.member.username}}</td>
-                                                    <td>{{member.secondname}}</td>
-                                                    <td>{{member.district}}</td>
+                                                    <td>{{member.member.email}}</td>
+                                                    <td>{{member.designation}}</td>
 
                                             </tr>
                                         {% endfor %}

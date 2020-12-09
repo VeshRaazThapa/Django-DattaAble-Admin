@@ -39,17 +39,25 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="779" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1607502718572">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="779" y="311" width="424" height="491" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1607502718572" />
     <state x="893" y="169" width="1022" height="737" key="SettingsEditor" timestamp="1607409394052">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="893" y="169" width="1022" height="737" key="SettingsEditor/72.27.1848.1053@72.27.1848.1053" timestamp="1607409394052" />
-    <state x="943" y="157" width="845" height="810" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1607423502168">
+    <state x="943" y="157" width="805" height="838" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1607510695862">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="943" y="157" width="845" height="810" key="com.intellij.history.integration.ui.views.FileHistoryDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1607423502168" />
-    <state x="910" y="251" width="672" height="678" key="search.everywhere.popup" timestamp="1607415226043">
+    <state x="943" y="157" width="805" height="838" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1607510695862" />
+    <state x="803" y="127" width="980" height="861" maximized="true" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog" timestamp="1607510382253">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="910" y="251" width="672" height="678" key="search.everywhere.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1607415226043" />
+    <state x="803" y="127" width="980" height="861" maximized="true" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1607510382253" />
+    <state x="910" y="251" width="672" height="678" key="search.everywhere.popup" timestamp="1607511275351">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="910" y="251" width="672" height="678" key="search.everywhere.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1607511275351" />
   </component>
 </project>

@@ -6,11 +6,6 @@ class MemberInfoForm(forms.ModelForm):
 
     class Meta:
         model = MemberInfo
-        fields = ('middle_name', 'designation', 'district', 'images','is_featured_member','is_home_featured_member')
-        # fields = ('middle_name',)
-class UserInfoForm(forms.ModelForm):
-
-    class Meta:
-        model = User
-        fields = {'email','username','last_name','first_name'}
-        # fields = ('username',)
+        fields = ('member_id','first_name','middle_name','last_name','email', 'designation', 'district',\
+                  'profile_link_twt','profile_link_fb', \
+                  'image','is_featured_member','is_home_featured_member')

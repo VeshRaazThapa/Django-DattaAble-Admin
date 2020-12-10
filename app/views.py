@@ -9,7 +9,7 @@ from django.template import loader
 from django.http import HttpResponse
 from django import template
 from app import models
-from app.forms import UserInfoForm,MemberInfoForm
+from app.forms import MemberInfoForm
 from django.http import HttpResponseRedirect
 
 @login_required(login_url="/login/")
@@ -34,24 +34,17 @@ def pages(request):
         if 'member_table' in load_template:
             context['membersinfo'] = models.MemberInfo.objects.all()
             load_template = 'ui-tables.html'
-            print(load_template)
-            print(context)
 
         if 'add_members' in load_template:
             load_template = 'ui-forms.html'
-            # from usermodel
-            context['user_forms'] = UserInfoForm
             #custom membermodel
-            context['member_forms'] = MemberInfoForm
+            context['member_form'] = MemberInfoForm
             if request.method == 'POST':
-                userform = UserInfoForm(request.POST)
                 memberform = MemberInfoForm(request.POST)
-                if userform.is_valid() :
-                    userform.save()
-                    # memberform.save()
-                    return HttpResponseRedirect('ui-tables.html')
+                if memberform.is_valid():
+                    memberform.save()
+                    return HttpResponseRedirect('index.html')
             else:
-                userform = UserInfoForm()
                 memberform = MemberInfoForm()
 
         html_template = loader.get_template(load_template)

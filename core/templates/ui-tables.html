@@ -49,9 +49,14 @@
                                                 <th>First Name</th>
                                                 <th>Middle Name</th>
                                                 <th>Last Name</th>
-                                                <th>username</th>
                                                 <th>Email Address</th>
                                                 <th>Designation</th>
+                                                <th>District</th>
+                                                <th>Twitter Link</th>
+                                                <th>Facebook Link</th>
+                                                <th>Image</th>
+                                                <th>Featured Member</th>
+                                                <th>Home Featured Member</th>
 
                                             </tr>
                                         </thead>
@@ -59,13 +64,18 @@
 
                                         {% for member in membersinfo %}
                                             <tr>
-                                                <th scope="row">{{member.member.id}}</th>
-                                                    <td>{{member.member.first_name}}</td>
+                                                <th scope="row">{{member.member_id}}</th>
+                                                    <td>{{member.first_name}}</td>
                                                     <td>{{member.middle_name}}</td>
-                                                    <td>{{member.member.last_name}}</td>
-                                                    <td>{{member.member.username}}</td>
-                                                    <td>{{member.member.email}}</td>
+                                                    <td>{{member.last_name}}</td>
+                                                    <td>{{member.email}}</td>
                                                     <td>{{member.designation}}</td>
+                                                    <td>{{member.district}}</td>
+                                                    <td>{{member.profile_link_twt}}</td>
+                                                    <td>{{member.profile_link_fb}}</td>
+                                                    <td>{{member.image}}</td>
+                                                    <td>{{member.is_featured_member}}</td>
+                                                    <td>{{member.is_home_featured_member}}</td>
 
                                             </tr>
                                         {% endfor %}
